@@ -16,7 +16,7 @@ class MainScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              color: SolidColors.colorCibcMidGrey,
+              color: SolidColors.colorCibcDarkGrey,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
                 child: Row(
@@ -156,7 +156,7 @@ class MainScreen extends StatelessWidget {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(10, 20, 0, 10),
                     child: Text(
                       FakeData["deadline"],
                       style: Theme.of(context).textTheme.labelMedium?.copyWith(
@@ -170,7 +170,71 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: screenHeight / 2.5,
+              child: Container(
+                color: SolidColors.colorCibcDarkGrey,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 20, 50, 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            FakeData["quick_links"].toUpperCase(),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: SolidColors.colorCibcWhite),
+                          ),
+                          Text(
+                            FakeData["contactus"],
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: SolidColors.colorCibcMidGrey),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text(
+                            FakeData["iamLooking"].toUpperCase(),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: SolidColors.colorCibcWhite),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
+        ),
+      ),
+      bottomNavigationBar: Material(
+        color: SolidColors.colorCibcDarkRed,
+        child: InkWell(
+          onTap: () {
+            //print('called on tap');
+          },
+          child: SizedBox(
+            height: screenHeight / 15,
+            width: double.infinity,
+            child: Center(
+              child: Text(
+                FakeData["sign_on"],
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(color: SolidColors.colorCibcWhite),
+              ),
+            ),
+          ),
         ),
       ),
     );
