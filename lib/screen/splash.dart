@@ -1,8 +1,8 @@
 import 'package:blog/colors.dart';
 import 'package:blog/gen/assets.gen.dart';
-import 'package:blog/mainScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,12 +15,18 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    //navigate to mainScreen after 3 second with riverpodrouter
     Future.delayed(const Duration(seconds: 3)).then(
       (value) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const MainScreen()));
+        context.go('/mainScreen');
       },
     );
+    // Future.delayed(const Duration(seconds: 3)).then(
+    //   (value) {
+    //     Navigator.pushReplacement(context,
+    //         MaterialPageRoute(builder: (context) => const MainScreen()));
+    //   },
+    // );
   }
 
   @override

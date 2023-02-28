@@ -6,7 +6,7 @@ Map FakeData = {
   "learn_more": "Find out how",
   "deadline":
       "Dont forget, the deadline to contribute to your RRSP is March 1, 2023",
-  "sign_on": "Sign on",
+  "sign_on": "Sign On",
   "quick_links": "Quick Links",
   "iamLooking": "I'm looking for",
   "contactus": "Contact Us",

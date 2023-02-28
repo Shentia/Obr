@@ -2,6 +2,7 @@ import 'package:blog/colors.dart';
 import 'package:blog/gen/assets.gen.dart';
 import 'package:blog/model/mockModel.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -216,22 +217,25 @@ class MainScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Material(
-        color: SolidColors.colorCibcDarkRed,
-        child: InkWell(
-          onTap: () {
-            //print('called on tap');
-          },
-          child: SizedBox(
-            height: screenHeight / 15,
-            width: double.infinity,
-            child: Center(
-              child: Text(
-                FakeData["sign_on"],
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge
-                    ?.copyWith(color: SolidColors.colorCibcWhite),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Material(
+          color: SolidColors.colorCibcDarkRed,
+          child: InkWell(
+            onTap: () {
+              context.go('/signOnScreen');
+            },
+            child: SizedBox(
+              height: screenHeight / 15,
+              width: double.infinity,
+              child: Center(
+                child: Text(
+                  FakeData["sign_on"],
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge
+                      ?.copyWith(color: SolidColors.colorCibcWhite),
+                ),
               ),
             ),
           ),
