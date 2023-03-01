@@ -1,4 +1,5 @@
 import 'package:blog/colors.dart';
+import 'package:blog/features/header.dart';
 import 'package:blog/gen/assets.gen.dart';
 import 'package:blog/model/mockModel.dart';
 import 'package:flutter/material.dart';
@@ -14,44 +15,10 @@ class MainScreen extends StatelessWidget {
 
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            Container(
-              color: SolidColors.colorCibcDarkGrey,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            Assets.images.cibcWhiteLogo.path,
-                            width: screenWidth * 0.25,
-                          ),
-                          SizedBox(
-                            width: screenWidth * 0.05,
-                          ),
-                          Text(
-                            FakeData["slogan"],
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall
-                                ?.copyWith(color: SolidColors.colorCibcWhite),
-                          )
-                        ],
-                      ),
-                    ),
-                    const Icon(
-                      Icons.menu,
-                      color: SolidColors.colorCibcWhite,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            Header(screenWidth: screenWidth, screenHeight: screenHeight),
             const SizedBox(
               height: 20,
             ),
